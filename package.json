@@ -1,0 +1,48 @@
+{
+  "name": "postgres-mcp",
+  "version": "1.0.0",
+  "description": "Read-only PostgreSQL MCP server for Claude analytics",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "axios": "^1.15.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "jwks-rsa": "^4.0.1",
+    "pg": "^8.13.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.13.10",
+    "@types/pg": "^8.11.11",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "testMatch": [
+      "**/*.spec.ts"
+    ]
+  }
+}
